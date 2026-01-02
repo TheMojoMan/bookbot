@@ -7,7 +7,7 @@ def get_book_text(file_path):
         with open(file_path) as f:
             return f.read()
     else:
-       return "-1"
+       return None
        
 def print_report(filepath,num_words,sorted_list):
     out = f"""============ BOOKBOT ============
@@ -28,7 +28,7 @@ def main():
         
     filepath = sys.argv[1]
     text = get_book_text(filepath)
-    if text == "-1":
+    if text == None:
         print("File error: file does not exist")
         sys.exit(1)
         
